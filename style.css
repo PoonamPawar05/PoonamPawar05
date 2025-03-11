@@ -1,0 +1,8 @@
+.member{
+    width: 600px;
+  height: 200px;  
+  padding: 50px;
+  border: 2px solid red;
+  box-sizing: border-box;
+  background-color: rgb(204, 248, 248);
+}

@@ -9,7 +9,7 @@ body {
 
 /* Main Container */
 .team {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 30px auto;
   background: rgba(255, 255, 255, 0.9);
   padding: 30px;
@@ -28,18 +28,27 @@ h2 {
   color: #333;
 }
 
+/* Team Member Grid */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 20px; /* Space between cards */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
 /* Team Member Styling */
 .member {
-  display: inline-block;
-  width: 250px;
-  height: 250px;
-  margin: 15px;
+  background: #fff;
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
+/* Alternating Background Colors */
 .member:nth-child(odd) {
   background: #ffdde1;
 }
@@ -65,4 +74,18 @@ h2 {
   color: #666;
   font-size: 1.1em;
   font-weight: bold;
+}
+
+/* Responsive: Switch to 2 columns on medium screens and 1 column on small screens */
+@media (max-width: 900px) {
+  .team-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns */
+      grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .team-container {
+      grid-template-columns: 1fr; /* 1 column for small screens */
+  }
 }
